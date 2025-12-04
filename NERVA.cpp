@@ -3,10 +3,6 @@
 // Single-file reference implementation (header + implementation) intended
 // as an integration stub for a game engine networking layer.
 //
-// Purpose: monitor network traffic, verify integrity, detect anomalies,
-// provide lightweight replay/snapshotting for verification and rollback,
-// and report telemetry for automated responses (quarantine, repro, alerts).
-//
 // This file is designed to be self-contained as a starting point. Replace
 // placeholder crypto / signature / transport calls with your platform
 // specific implementations (HSM, OS crypto, engine transport API).
@@ -421,4 +417,5 @@ int main() {
     std::this_thread::sleep_for(std::chrono::seconds(2));
     return 0;
 }
+
 #endif
