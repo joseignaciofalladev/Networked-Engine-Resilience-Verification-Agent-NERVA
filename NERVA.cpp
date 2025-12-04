@@ -1,4 +1,3 @@
-// NERVA.cpp
 // Networked Engine Resilience & Verification Agent (NERVA)
 // Single-file reference implementation (header + implementation) intended
 // as an integration stub for a game engine networking layer.
@@ -419,3 +418,4 @@ int main() {
 }
 
 #endif
+
