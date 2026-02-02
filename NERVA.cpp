@@ -1,7 +1,7 @@
 // Networked Engine Resilience & Verification Agent (NERVA)
 // Single-file reference implementation (header + implementation) intended
 // as an integration stub for a game engine networking layer.
-//
+
 // This file is designed to be self-contained as a starting point. Replace
 // placeholder crypto / signature / transport calls with your platform
 // specific implementations (HSM, OS crypto, engine transport API).
@@ -22,7 +22,7 @@
 #include <iomanip>
 #include <iostream>
 
-// ----------------------------- Configuration --------------------------------
+// Configuration
 struct NervaConfig {
     // Max number of snapshots to keep per connection
     size_t maxSnapshots = 128;
@@ -40,7 +40,7 @@ struct NervaConfig {
     uint32_t telemetryIntervalMs = 1000;
 };
 
-// ----------------------------- Utility Types --------------------------------
+//  Utility Types 
 using Timestamp = std::chrono::steady_clock::time_point;
 inline Timestamp Now() { return std::chrono::steady_clock::now(); }
 inline uint64_t DurationMs(const Timestamp &a, const Timestamp &b) {
@@ -63,7 +63,7 @@ struct NervaSnapshot {
     std::vector<uint8_t> stateBlob;
 };
 
-// ----------------------------- Crypto Stubs ----------------------------------
+//  Crypto Stubs 
 // NOTE: Replace these with secure implementations (HSM, libsodium, OpenSSL, etc.)
 namespace crypto {
 
@@ -90,7 +90,7 @@ inline bool Verify_HMAC_SHA256(const std::vector<uint8_t>& key, const std::vecto
 
 } // namespace crypto
 
-// --------------------------- Telemetry / Logging -----------------------------
+//  Telemetry / Logging 
 struct NervaTelemetry {
     std::atomic<uint64_t> totalPackets{0};
     std::atomic<uint64_t> badSignatures{0};
@@ -105,7 +105,7 @@ struct NervaTelemetry {
     }
 };
 
-// --------------------------- Connection State --------------------------------
+//  Connection State 
 class ConnectionState {
 public:
     ConnectionState(const std::string& id, const NervaConfig& cfg) : connId(id), config(cfg) {}
@@ -215,7 +215,7 @@ private:
     size_t replayBufferBytes = 0;
 };
 
-// --------------------------- NERVA Agent ------------------------------------
+//  NERVA Agent 
 class NervaAgent {
 public:
     using AlertCallback = std::function<void(const std::string& connId, const std::string& message)>;
@@ -418,4 +418,5 @@ int main() {
 }
 
 #endif
+
 
