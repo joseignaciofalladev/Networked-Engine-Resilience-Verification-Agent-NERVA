@@ -1,4 +1,3 @@
-// Networked Engine Resilience & Verification Agent (NERVA)
 // Single-file reference implementation (header + implementation) intended
 // as an integration stub for a game engine networking layer.
 
@@ -389,7 +388,7 @@ private:
     }
 };
 
-// --------------------------- Example Usage ----------------------------------
+// Example Usage
 #ifdef NERVA_DEMO_MAIN
 int main() {
     NervaConfig cfg;
@@ -418,5 +417,6 @@ int main() {
 }
 
 #endif
+
 
 
