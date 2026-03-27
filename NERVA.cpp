@@ -87,7 +87,7 @@ inline bool Verify_HMAC_SHA256(const std::vector<uint8_t>& key, const std::vecto
     return diff == 0;
 }
 
-} // namespace crypto
+}
 
 //  Telemetry / Logging 
 struct NervaTelemetry {
@@ -417,6 +417,3 @@ int main() {
 }
 
 #endif
-
-
-
